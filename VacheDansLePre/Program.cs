@@ -56,6 +56,15 @@ namespace VacheDansLePre
             Enclos.CalculCentreGravite();
             Console.WriteLine("Centre de gravité = abscisse : {0}, ordonnée : {1} ", Enclos.centreGravite.xG, Enclos.centreGravite.yG);
 
+
+            valid = Enclos.centreGravite.AppartenancePointPolygone(Enclos, Enclos.centreGravite);
+
+            if (valid)
+                Console.WriteLine("La vache est dans le pré");
+            else
+                Console.WriteLine("La vache n'est pas dans le pré");
+            
+
             Console.ReadLine();
 
         }
