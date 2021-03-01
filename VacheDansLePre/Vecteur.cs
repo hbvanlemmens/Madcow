@@ -17,20 +17,23 @@ namespace VacheDansLePre
             yV = p_yV;
         }
 
-        public void CalculCoordVecteur(Piquet p_piquet1, Piquet p_piquet2)
+        public void CalculCoordVecteur(CentreGravite centreGravite, Piquet p_piquet2)
         {
-
+            xV = p_piquet2.xP - centreGravite.xG;
+            yV = p_piquet2.yP - centreGravite.yG;
         }
 
-        public static float CalculProdScalaire(Vecteur p_v1,Vecteur p_v2)
+        public float CalculProdScalaire(Vecteur p_v1, Vecteur p_v2)
         {
-            float produit = 0.0f;
+            float produit;
+            produit = p_v1.xV * p_v2.xV + p_v1.yV * p_v2.yV;
             return produit;
         }
 
-        public static float CalculNormeVecteur(Vecteur p_v1)
+        public float CalculNormeVecteur(Vecteur p_v1)
         {
-            float norme = 0.0f;
+            float norme;
+            norme = (float)Math.Sqrt(Math.Pow(p_v1.xV, 2) + Math.Pow(p_v1.yV, 2));
             return norme;
         }
 
