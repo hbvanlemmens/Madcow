@@ -40,22 +40,31 @@ namespace VacheDansLePre
 
             centreGravite.xG = (float)(1 / (6 * airePolygone)*somme_x);
             centreGravite.yG = (float)(1 / (6 * airePolygone)*somme_y);
-        } 
-         
+        }
+
         public void CalculAire()
         {
             float somme = 0;
-            for (byte i = 0; i < listePiquet.Count() - 1; i++)
+            for (byte i = 0; i < listePiquet.Count() - 1; i++)//4 itération 0-3 pour l'exemple du cours
             {
                 somme = somme + (listePiquet[i].xP * listePiquet[i + 1].yP - listePiquet[i + 1].xP * listePiquet[i].yP);
-                if (i == listePiquet.Count()-2)
-                    somme = somme + (listePiquet[i+1].xP * listePiquet[0].yP - listePiquet[0].xP * listePiquet[i+1].yP);
+                if (i == listePiquet.Count() - 2) //i==2 arrivé a la 3ième itération
+                    somme = somme + (listePiquet[i + 1].xP * listePiquet[0].yP - listePiquet[0].xP * listePiquet[i + 1].yP); //réglage modulo n
             }
 
             airePolygone = (float)0.5 * somme;
         }
 
-        
+        public float CalculAngles(CentreGravite centre, Piquet p_v1, Piquet p_v2)
+        {
+            Vecteur vect_a = new Vecteur(0, 0);
+            Vecteur vect_b = new Vecteur(0, 0);
+            vect_a.CalculCoordVecteur(centre, p_v1);// vecteur GSi
+            vect_b.CalculCoordVecteur(centre, p_v2);// vecteur GSi+1
+            float angle;
+            angle = (float)Math.Acos(vect_a.CalculProdScalaire(vect_a, vect_b) / vect_a.CalculNormeVecteur(vect_a) * vect_b.CalculNormeVecteur(vect_b));
+            return angle;
+        }
 
     }
 }
