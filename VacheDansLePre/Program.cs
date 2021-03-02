@@ -58,7 +58,7 @@ namespace VacheDansLePre
 
 
             valid = Enclos.centreGravite.AppartenancePointPolygone(Enclos, Enclos.centreGravite);
-
+            
             if (valid)
                 Console.WriteLine("La vache est dans le pré");
             else

@@ -36,11 +36,5 @@ namespace VacheDansLePre
             norme = (float)Math.Sqrt(Math.Pow(p_v1.xV, 2) + Math.Pow(p_v1.yV, 2));
             return norme;
         }
-
-        /*public static float CalculAngles(Vecteur p_v1, Vecteur p_v2)       // placement incertain - sémantique de la fonction encore floue
-        {
-            float angle = 0.0f;
-            return angle;
-        }*/
     }
 }
