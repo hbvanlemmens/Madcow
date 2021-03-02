@@ -62,7 +62,7 @@ namespace VacheDansLePre
             vect_a.CalculCoordVecteur(centre, p_v1);// vecteur GSi
             vect_b.CalculCoordVecteur(centre, p_v2);// vecteur GSi+1
             float angle;
-            angle = (float)Math.Acos(vect_a.CalculProdScalaire(vect_a, vect_b) / vect_a.CalculNormeVecteur(vect_a) * vect_b.CalculNormeVecteur(vect_b));
+            angle = (float)Math.Acos(vect_a.CalculProdScalaire(vect_a, vect_b) / (vect_a.CalculNormeVecteur(vect_a) * vect_b.CalculNormeVecteur(vect_b)));
             return angle;
         }
 
