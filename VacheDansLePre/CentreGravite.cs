@@ -10,13 +10,13 @@ namespace VacheDansLePre
     {
         public float xG { get; set; }
         public float yG { get; set; }
-
+        //constructeur
         public CentreGravite(float p_xG, float p_yG)
         {
             xG = p_xG;
             yG = p_yG;
         }
-
+        //methode
         public bool AppartenancePointPolygone(Polygone polygone,CentreGravite centreGravite)
         {
             float somme = 0.0f, thetai;

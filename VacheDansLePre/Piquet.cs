@@ -10,7 +10,7 @@ namespace VacheDansLePre
     {
         public float xP { get; set; }
         public float yP { get; set; }
-
+        //constructeur
         public Piquet(float p_xP, float p_yP)
         {
             xP = p_xP;
