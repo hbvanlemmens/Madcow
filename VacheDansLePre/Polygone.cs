@@ -13,6 +13,7 @@ namespace VacheDansLePre
         public float airePolygone { get; set; }
         public CentreGravite centreGravite = new CentreGravite(0,0);
 
+        //constructeur
         public Polygone(List<Piquet> p_listePiquet)
         {
             listePiquet = p_listePiquet;
@@ -20,6 +21,8 @@ namespace VacheDansLePre
             centreGravite.xG = 0.0f;
             centreGravite.yG = 0.0f;
         }
+
+        //LES METHODES
         public void CalculCentreGravite()
         {
             float somme_x = 0;
